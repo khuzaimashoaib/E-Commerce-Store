@@ -825,7 +825,7 @@ textarea.input {
   padding: 60px 0px;
   margin: 30px 0px;
   background-color: #e4e7ed;
-  background-image: url("../img/hotdeal.png");
+  /* background-image: url("../img/hotdeal.png"); */
   background-position: center;
   background-repeat: no-repeat;
 }
