@@ -68,3 +68,35 @@ export async function deleteProduct(table, id) {
   if (error) console.error("Delete error:", error);
   return { error };
 }
+
+export async function fetchUniqueCategories() {
+  let { data, error } = await supabase
+    .from("products")
+    .select("category")
+    .not("category", "is", null);
+  
+  if (error) {
+    console.error("Fetch categories error:", error);
+    return [];
+  }
+
+  // Get unique categories
+  const uniqueCategories = [...new Set(data.map(item => item.category))];
+  return uniqueCategories;
+}
+
+export async function fetchUniqueBrands() {
+  let { data, error } = await supabase
+    .from("products")
+    .select("brand")
+    .not("brand", "is", null);
+  
+  if (error) {
+    console.error("Fetch brands error:", error);
+    return [];
+  }
+
+  // Get unique brands
+  const uniqueBrands = [...new Set(data.map(item => item.brand))];
+  return uniqueBrands;
+}
