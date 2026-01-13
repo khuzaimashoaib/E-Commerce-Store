@@ -134,28 +134,11 @@
                   >
                     <i class="fa fa-shopping-cart"></i>
                     <span>Your Cart</span>
-                    <div class="qty">3</div>
+                    <div class="qty" id="cart-qty">0</div>
                   </a>
                   <div class="cart-dropdown">
                     <div class="cart-list">
-                      <div class="product-widget">
-                        <div class="product-img">
-                          <img src="../img/product01.png" alt="" />
-                        </div>
-                        <div class="product-body">
-                          <h3 class="product-name">
-                            <a href="#">product name goes here</a>
-                          </h3>
-                          <h4 class="product-price">
-                            <span class="qty">1x</span>$980.00
-                          </h4>
-                        </div>
-                        <button class="delete">
-                          <i class="fa fa-close"></i>
-                        </button>
-                      </div>
-
-                      <div class="product-widget">
+                      <!-- <div class="product-widget">
                         <div class="product-img">
                           <img src="../img/product02.png" alt="" />
                         </div>
@@ -170,18 +153,13 @@
                         <button class="delete">
                           <i class="fa fa-close"></i>
                         </button>
-                      </div>
+                      </div> -->
                     </div>
                     <div class="cart-summary">
-                      <small>3 Item(s) selected</small>
-                      <h5>SUBTOTAL: $2940.00</h5>
+                      <small>0 Item(s) selected</small>
+                      <h5>SUBTOTAL: Rs. 0</h5>
                     </div>
-                    <div class="cart-btns">
-                      <a href="#">View Cart</a>
-                      <a href="#"
-                        >Checkout <i class="fa fa-arrow-circle-right"></i
-                      ></a>
-                    </div>
+                    <div class="cart-btns"></div>
                   </div>
                 </div>
                 <!-- /Cart -->
@@ -242,7 +220,7 @@
           <div class="col-md-12">
             <h3 class="breadcrumb-header">Checkout</h3>
             <ul class="breadcrumb-tree">
-              <li><a href="#">Home</a></li>
+              <li><a href="../index.html">Home</a></li>
               <li class="active">Checkout</li>
             </ul>
           </div>
@@ -298,141 +276,33 @@
                 />
               </div>
               <div class="form-group">
-                <input
-                  class="input"
-                  type="text"
-                  name="city"
-                  placeholder="City"
-                />
+                <select class="input" name="city">
+                  <option value="">Select City</option>
+                  <option value="Karachi">Karachi</option>
+                  <option value="Lahore">Lahore</option>
+                  <option value="Islamabad">Islamabad</option>
+                  <option value="Rawalpindi">Rawalpindi</option>
+                  <option value="Faisalabad">Faisalabad</option>
+                  <option value="Multan">Multan</option>
+                  <option value="Peshawar">Peshawar</option>
+                  <option value="Quetta">Quetta</option>
+                  <option value="Sialkot">Sialkot</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Sukkur">Sukkur</option>
+                </select>
               </div>
-              <div class="form-group">
-                <input
-                  class="input"
-                  type="text"
-                  name="country"
-                  placeholder="Country"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  class="input"
-                  type="text"
-                  name="zip-code"
-                  placeholder="ZIP Code"
-                />
-              </div>
+
+              <div class="form-group"></div>
               <div class="form-group">
                 <input
                   class="input"
                   type="tel"
                   name="tel"
-                  placeholder="Telephone"
+                  placeholder="Phone"
                 />
-              </div>
-              <div class="form-group">
-                <div class="input-checkbox">
-                  <input type="checkbox" id="create-account" />
-                  <label for="create-account">
-                    <span></span>
-                    Create Account?
-                  </label>
-                  <div class="caption">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt.
-                    </p>
-                    <input
-                      class="input"
-                      type="password"
-                      name="password"
-                      placeholder="Enter Your Password"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
             <!-- /Billing Details -->
-
-            <!-- Shiping Details -->
-            <div class="shiping-details">
-              <div class="section-title">
-                <h3 class="title">Shiping address</h3>
-              </div>
-              <div class="input-checkbox">
-                <input type="checkbox" id="shiping-address" />
-                <label for="shiping-address">
-                  <span></span>
-                  Ship to a diffrent address?
-                </label>
-                <div class="caption">
-                  <div class="form-group">
-                    <input
-                      class="input"
-                      type="text"
-                      name="first-name"
-                      placeholder="First Name"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      class="input"
-                      type="text"
-                      name="last-name"
-                      placeholder="Last Name"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      class="input"
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      class="input"
-                      type="text"
-                      name="address"
-                      placeholder="Address"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      class="input"
-                      type="text"
-                      name="city"
-                      placeholder="City"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      class="input"
-                      type="text"
-                      name="country"
-                      placeholder="Country"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      class="input"
-                      type="text"
-                      name="zip-code"
-                      placeholder="ZIP Code"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <input
-                      class="input"
-                      type="tel"
-                      name="tel"
-                      placeholder="Telephone"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /Shiping Details -->
 
             <!-- Order notes -->
             <div class="order-notes">
@@ -453,13 +323,11 @@
               </div>
               <div class="order-products">
                 <div class="order-col">
-                  <div>1x Product Name Goes Here</div>
-                  <div>$980.00</div>
+                  <p style="text-align: center; color: #999">
+                    No items in cart
+                  </p>
                 </div>
-                <div class="order-col">
-                  <div>2x Product Name Goes Here</div>
-                  <div>$980.00</div>
-                </div>
+               
               </div>
               <div class="order-col">
                 <div>Shiping</div>
@@ -467,7 +335,7 @@
               </div>
               <div class="order-col">
                 <div><strong>TOTAL</strong></div>
-                <div><strong class="order-total">$2940.00</strong></div>
+                <div><strong class="order-total">Rs. 00</strong></div>
               </div>
             </div>
             <div class="payment-method">
@@ -479,9 +347,9 @@
                 </label>
                 <div class="caption">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Make your payment directly into our bank account. Please use
+                    your Order ID as the payment reference. Your order will not
+                    be shipped until the funds have cleared in our account.
                   </p>
                 </div>
               </div>
@@ -489,29 +357,8 @@
                 <input type="radio" name="payment" id="payment-2" />
                 <label for="payment-2">
                   <span></span>
-                  Cheque Payment
+                  Cash on Delivery
                 </label>
-                <div class="caption">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-              </div>
-              <div class="input-radio">
-                <input type="radio" name="payment" id="payment-3" />
-                <label for="payment-3">
-                  <span></span>
-                  Paypal System
-                </label>
-                <div class="caption">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
               </div>
             </div>
             <div class="input-checkbox">
@@ -705,5 +552,7 @@
     <script src="../js/nouislider.min.js"></script>
     <script src="../js/jquery.zoom.min.js"></script>
     <script src="../js/main.js"></script>
+    <script type="module" src="../js/cart.js"></script>
+    <script type="module" src="../js/checkout.js"></script>
   </body>
 </html>

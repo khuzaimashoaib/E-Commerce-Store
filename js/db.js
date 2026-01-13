@@ -12,8 +12,8 @@ export async function fetchProducts(table) {
     console.error("Fetch error:", error);
     return;
   }
-//   console.log("data",  data);
-  
+  //   console.log("data",  data);
+
   return data;
 }
 
@@ -74,14 +74,14 @@ export async function fetchUniqueCategories() {
     .from("products")
     .select("category")
     .not("category", "is", null);
-  
+
   if (error) {
     console.error("Fetch categories error:", error);
     return [];
   }
 
   // Get unique categories
-  const uniqueCategories = [...new Set(data.map(item => item.category))];
+  const uniqueCategories = [...new Set(data.map((item) => item.category))];
   return uniqueCategories;
 }
 
@@ -90,13 +90,43 @@ export async function fetchUniqueBrands() {
     .from("products")
     .select("brand")
     .not("brand", "is", null);
-  
+
   if (error) {
     console.error("Fetch brands error:", error);
     return [];
   }
 
   // Get unique brands
-  const uniqueBrands = [...new Set(data.map(item => item.brand))];
+  const uniqueBrands = [...new Set(data.map((item) => item.brand))];
   return uniqueBrands;
+}
+
+export async function saveOrder(orderData) {
+  const {
+    user_name,
+    user_email,
+    user_phone,
+    shipping_address,
+    city,
+    total_amount,
+  } = orderData;
+
+  let { data, error } = await supabase.from("orders").insert([
+    {
+      user_name,
+      user_email,
+      user_phone,
+      shipping_address,
+      city,
+      total_amount,
+    },
+  ]);
+
+  if (error) {
+    console.error("Order save error:", error);
+    return { success: false, error };
+  }
+
+  console.log("Order saved successfully:", data);
+  return { success: true, data };
 }
