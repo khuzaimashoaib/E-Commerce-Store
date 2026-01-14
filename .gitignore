@@ -1,6 +1,5 @@
 # Environment variables and configuration files
 .env
-js/config.js
 
 # Node.js (if you add build tools later)
 node_modules/
