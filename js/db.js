@@ -1,10 +1,7 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/+esm";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./config.js";
 
-const supabaseUrl = "https://oucydoxmpgsgoqytcvtb.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im91Y3lkb3htcGdzZ29xeXRjdnRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3NDU1OTQsImV4cCI6MjA3NDMyMTU5NH0.e5iAii2E-uIxKWE-He1O5aGfaZu_k1hzw_SuI8iFGaA";
-
-export const supabase = createClient(supabaseUrl, supabaseKey);
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 export async function fetchProducts(table) {
   let { data, error } = await supabase.from(table).select("*");

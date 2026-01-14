@@ -31,6 +31,15 @@ export const addToCart = (product) => {
       image: product.image,
     });
   }
+  Swal.fire({
+    title: "Product Added to Cart!",
+    icon: "success",
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 2000,
+    theme: 'dark',
+  });
 
   saveCart(cart);
   updateCartCount();
@@ -62,8 +71,6 @@ export const removeFromCart = (id) => {
   updateCartCount();
   renderCartDropdown();
 
-  // Debug: Check localStorage directly
-  console.log("LocalStorage after save:", localStorage.getItem("cart"));
 };
 
 // ================================
@@ -115,14 +122,12 @@ export const renderCartDropdown = () => {
   `;
 };
 
-
 const cartList = document.querySelector(".cart-list");
 cartList.addEventListener("click", (e) => {
   const deleteBtn = e.target.closest(".remove-cart-item");
   if (!deleteBtn) return;
 
   const id = deleteBtn.dataset.id;
-  console.log("Delete button clicked:", id);
   removeFromCart(id);
 });
 

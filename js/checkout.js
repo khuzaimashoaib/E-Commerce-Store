@@ -153,25 +153,57 @@ const handlePlaceOrder = async () => {
   const termsChecked = document.querySelector('input[id="terms"]')?.checked;
 
   // Validation
-  if (!firstName || !lastName || !email || !address || !city || !phone) {
-    alert("Please fill in all required fields");
+  if (!firstName || !email || !address || !city || !phone) {
+    Swal.fire({
+      title: "Please fill in all required fields",
+      icon: "success",
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 2000,
+      theme: "dark",
+    });
     return;
   }
 
   if (!termsChecked) {
-    alert("Please accept the terms & conditions");
+    Swal.fire({
+      title: "Please accept the terms & conditions.",
+      icon: "success",
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 2000,
+      theme: "dark",
+    });
     return;
   }
 
   if (!isValidEmail(email)) {
-    alert("Please enter a valid email address");
+    Swal.fire({
+      title: "Please enter a valid email address.",
+      icon: "success",
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 2000,
+      theme: "dark",
+    });
     return;
   }
 
   // Check if cart is empty
   const cart = getCart();
   if (cart.length === 0) {
-    alert("Your cart is empty. Please add products before placing order");
+    Swal.fire({
+      title: "Your cart is empty. Please add products before placing order.",
+      icon: "success",
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 2000,
+      theme: "dark",
+    });
     return;
   }
 
@@ -193,7 +225,29 @@ const handlePlaceOrder = async () => {
     const response = await saveOrder(orderData);
 
     if (response.success) {
-      alert("Order placed successfully! Thank you for your purchase.");
+      Swal.fire({
+        title: "Thank you!",
+        text: "Order placed successfully! Thank you for your purchase.",
+        confirmButtonText: "Continue Shopping",
+        confirmButtonColor: "#D10024",
+        theme: "dark",
+        showClass: {
+          popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `,
+        },
+        hideClass: {
+          popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `,
+        },
+      }).then(() => {
+        window.location.href = "../index.html";
+      });
 
       // Clear cart after successful order
       localStorage.removeItem("cart");
@@ -222,15 +276,27 @@ const handlePlaceOrder = async () => {
       if (cartQtyElement) {
         cartQtyElement.textContent = "0";
       }
-
-      // Redirect to home or show success message
-      // window.location.href = "../index.html"; // Uncomment to redirect
     } else {
-      alert("Error placing order: " + response.error.message);
+      Swal.fire({
+        title: "Error placing order.",
+        icon: "error",
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        theme: "dark",
+      });
     }
   } catch (error) {
-    console.error("Order submission error:", error);
-    alert("An error occurred while placing your order. Please try again.");
+    Swal.fire({
+      title: "An error occurred while placing your order. Please try again.",
+      icon: "error",
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 2000,
+      theme: "dark",
+    });
   }
 };
 
