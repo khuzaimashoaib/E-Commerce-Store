@@ -1,3 +1,4 @@
-// config.js
-export const SUPABASE_URL = "https://xyzcompany.supabase.co";
-export const SUPABASE_ANON_KEY = "public-anon-key";
+// Supabase Configuration
+
+export const SUPABASE_URL = "https://oucydoxmpgsgoqytcvtb.supabase.co";
+export const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im91Y3lkb3htcGdzZ29xeXRjdnRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3NDU1OTQsImV4cCI6MjA3NDMyMTU5NH0.e5iAii2E-uIxKWE-He1O5aGfaZu_k1hzw_SuI8iFGaA";
