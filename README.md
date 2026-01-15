@@ -47,17 +47,6 @@ The store fetches product data from Supabase and provides core shopping function
 - **Supabase Database** - PostgreSQL database for products and orders
 - **Supabase API** - RESTful API for data operations
 
-## 🔗 Dashboard Integration
-
-This store is directly connected to a custom dashboard, similar to WordPress architecture, where products are managed and stored in the database. All product data displayed on the website is fetched in real-time from Supabase.
-
-### Key Integration Points
-
-- **Product Management** - Add, edit, delete products through dashboard
-- **Category & Brand Management** - Dynamic filtering options
-- **Real-time Sync** - Instant updates between dashboard and storefront
-
-
 ## 🛠 Project Purpose
 
 This project was developed to demonstrate and practice:
